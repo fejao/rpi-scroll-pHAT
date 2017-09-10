@@ -9,10 +9,12 @@ _____________________________________________
 # xmas-tree
 _____________________________________________
 Displays a Christmas tree with many functions
+[How to use the xmas-tree.py](xmas-tree/README.md)
 
 # space-invaders
 _____________________________________________
-Displays a Christmas tree with many functions
+Displays a scrolling Space-Invader figure
+[How to use the space-invaders.py](space-invaders/README.md)
 
 # pacman
 _____________________________________________
@@ -21,4 +23,5 @@ Displays a scrolling Pacman figure
 
 # twitter
 _____________________________________________
-Displays a Christmas tree with many functions
+WIP
+[How to use the twitter.py](twitter/README.md)
