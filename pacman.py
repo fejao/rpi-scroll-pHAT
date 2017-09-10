@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
 '''
-usage: space-invaders.py [-h] [-v] [-b BRIGHTNESS] [-dt DANCE_TIMES]
-                         [-pt PULSE_TIMES] [-pd PAUSE_DANCE] [-pp PAUSE_PULSE]
-                         [-ps PAUSE_SCROLL] [-f FUNCTION]
+usage: pacman.py [-h] [-v] [-b BRIGHTNESS] [-p POSITION] [-dt DANCE_TIMES]
+                 [-pt PULSE_TIMES] [-pd PAUSE_DANCE] [-pp PAUSE_PULSE]
+                 [-ps PAUSE_SCROLL] [-f FUNCTION]
 
 Display a Space-Invader character over your scroll-pHAT from Pimoroni
 
@@ -612,14 +612,15 @@ def __main__(args):
     Parameters
     ----------
     args : argparse.Namespace(
+        verbose : bool
         brightness : int,
+        position : int,
 		dance_times : int,
-		function : string,
+		pulse_times : int,
 		pause_dance : float,
 		pause_pulse : float,
 		pause_scroll : float,
-		pulse_times : int,
-		verbose : bool
+		function : string,
 	)
     Arguments parsed to run the main function of the script
 

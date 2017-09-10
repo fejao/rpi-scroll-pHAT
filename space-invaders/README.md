@@ -1,14 +1,14 @@
-rpi-scroll-pHAT/space-invaders
+rpi-scroll-pHAT/space-invader
 ===============
 Display a Space-Invader character over your scroll-pHAT from Pimoroni
 
-Script was written to not be complicated and re-factored easily, maybe in future adding for *scrll-PHET-HD* also
+Script was written to not be complicated and re-factored easily, maybe in future adding for *scroll-pHAT-HD* also
 
 # Usage
 The arguments that can be used with the script:
 
 ```
-$ python space-invaders.py [-h] [-v] [-b BRIGHTNESS] [-dt DANCE_TIMES]
+$ python space-invader.py [-h] [-v] [-b BRIGHTNESS] [-dt DANCE_TIMES]
                          [-pt PULSE_TIMES] [-pd PAUSE_DANCE] [-pp PAUSE_PULSE]
                          [-ps PAUSE_SCROLL] [-f FUNCTION]
 ```
@@ -21,37 +21,112 @@ Optional arguments:
   * Increase output verbosity
 * **-b BRIGHTNESS, --brightness BRIGHTNESS**
   * Set the brightness, default: 5
-* **-dt DANCE_TIMES, --dance_times DANCE_TIMES**
+* **-dt DANCE\_TIMES, --dance_times DANCE\_TIMES**
   * Set how many times to dance, default: 3
-* **-pt PULSE_TIMES, --pulse_times PULSE_TIMES**
+* **-pt PULSE\_TIMES, --pulse_times PULSE\_TIMES**
   * Set how many times to pulse, default: 3
-* **-pd PAUSE_DANCE, --pause-dance PAUSE_DANCE**
-  * Set the dance pause interval in seconds, default: 0.5
-* **-pp PAUSE_PULSE, --pause-pulse PAUSE_PULSE**
-  * Set the pulse pause interval in seconds, default: 0.25
-* **-ps PAUSE_SCROLL, --pause-scroll PAUSE_SCROLL**
-  * Set the scroll pause interval in seconds, default: 0.5
+* **-pd PAUSE\_DANCE, --pause-dance PAUSE\_DANCE**
+  * Set the dance pause interval in seconds, default: 0.3
+* **-pp PAUSE\_PULSE, --pause-pulse PAUSE\_PULSE**
+  * Set the pulse pause interval in seconds, default: 0.3
+* **-ps PAUSE\_SCROLL, --pause-scroll PAUSE\_SCROLL**
+  * Set the scroll pause interval in seconds, default: 0.3
 * **-f FUNCTION, --function FUNCTION**
-  * Set the function to run ('dance', 'pulse', 'show','scroll-in', 'scroll-out', 'scroll', 'scroll-and-dance', 'scroll-and-pulse', 'clear') type, default: scroll-and-pulse
+  * Set the function to run ('dance', 'pulse', 'show','scroll-in', 'scroll-out', 'scroll', 'scroll-and-dance', 'scroll-and-pulse', 'clear'), default: scroll-and-pulse
 
 # Functions
-This are the already fixed functions, fell free to add or change
+  This are the already fixed functions, fell free to add or change
 
-* **clear**
-  * aaaaa
 * **dance**
-  * aaaaa
+  * Display the *Space-Invader* figure dancing. It can be used with:
+      * **-b/--brightness**
+      * **-dt/--dance_times**
+      * **-pd/--pause-dance**
+  * Example:
+
+      ```
+      $ python space-invader.py -f dance -b 7 -dt 3 -pd 0.2
+      ```
+
+      ![Alt text](../pacman/dance-left.gif?raw=true "Pacman dance-left scroll-pHAT")
+
 * **pulse**
-  * aaaaa
+  * Display the *Space-Invader* figure pulsing.
+  * It can be used with:
+      * **-pp/--pause-pulse**
+      * **-pt/--pulse_times**
+  * Example:
+
+      ```
+      $ python space-invader.py -f pulse -pt 3 -pp 0.4
+      ```
+
+      ![Alt text](../pacman/pulse-left.gif?raw=true "Pacman pulse-left scroll-pHAT")
+
 * **show**
-  * aaaaa
+  * Display the *Space-Invader*.
+  * It can be used with:
+      * **-b/--brightness**
+  * Example:
+
+      ```
+      $ python space-invader.py -f show -b 5
+      ```
+
+      ![Alt text](../pacman/pulse-left.gif?raw=true "Pacman pulse-left scroll-pHAT")
+
 * **scroll-in**
-  * aaaaa
+  * Scroll-in the *Space-Invader* figure.
+  * It will scroll till the middle **-1** position, to display at the middle, use: **show**
+  * It can be used with:
+      * **-b/--brightness**
+      * **-ps/--pause-scroll**
+  * Example:
+
+      ```
+      $ python space-invader.py -f scroll-in -b 5 -ps 0.6
+      ```
+
+      ![Alt text](../pacman/pulse-left.gif?raw=true "Pacman pulse-left scroll-pHAT")
+
 * **scroll-out**
-  * aaaaa
-* **scroll**
-  * aaaaa
+  * Scroll-out the *Space-Invader* figure.
+  * It will scroll till the middle **-1** position, to display at the middle, use: **show**
+  * It can be used with:
+      * **-b/--brightness**
+      * **-ps/--pause-scroll**
+  * Example:
+
+      ```
+      $ python space-invader.py -f scroll-in -b 5 -ps 0.6
+      ```
+
+      ![Alt text](../pacman/pulse-left.gif?raw=true "Pacman pulse-left scroll-pHAT")
+
 * **scroll-and-dance**
-  * aaaaa
+  * Scroll-in the *Space-Invader* figure, dancing in the middle and scroll-out.
+  * It can be used with:
+      * **-b/--brightness**
+      * **-pd/--pause-dance**
+      * **-ps/--pause-scroll**
+  * Example:
+
+      ```
+      $ python space-invader.py -f scroll-and-dance -pd 0.4 -ps 0.5
+      ```
+
+      ![Alt text](../pacman/pulse-left.gif?raw=true "Pacman pulse-left scroll-pHAT")
+
 * **scroll-and-pulse**
-  * aaaaa
+  * Scroll-in the *Space-Invader* figure, pulsing in the middle and scroll-out.
+  * It can be used with:
+      * **-b/--brightness**
+      * **-pp/--pause-pulse**
+      * **-ps/--pause-scroll**
+  * Example:
+
+      ```
+      $ python space-invader.py -f scroll-and-dance -pp 0.5 -ps 0.4
+      ```
+
+      ![Alt text](../pacman/pulse-left.gif?raw=true "Pacman pulse-left scroll-pHAT")

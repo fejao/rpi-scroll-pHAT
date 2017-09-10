@@ -42,22 +42,21 @@ __author__ = 'https://github.com/fejao'
 DEFAULT_BRIGHTNESS = 5
 DEFAULT_DANCE_TIMES = 3
 DEFAULT_PULSE_TIMES = 3
-DEFAULT_SNOW_TIMES = 3
 DEFAULT_FUNCTION_NAME = 'scroll-and-pulse'
-DEFAULT_PAUSE_DANCE = 0.5
-DEFAULT_PAUSE_PULSE = 0.25
-DEFAULT_PAUSE_SCROLL = 0.5
+DEFAULT_PAUSE_DANCE = 0.3
+DEFAULT_PAUSE_PULSE = 0.3
+DEFAULT_PAUSE_SCROLL = 0.3
 
 DEFAULT_SCROLL_DISTANCE = 11
 
 class SpaceInvader(object):
-	'''A'''
+	'''Class with functions to display the space-invader figure'''
 
 	def __init__(self, args):
 		self.args = args
 
 	def armDownColumn(self, columnNumber, position):
-		'''AAA'''
+		'''Sets the columns for when it has the arms up'''
 
 		if self.args.verbose:
 			print('Running SpaceInvader.armUpDown, columnNumber: %s, position: %s' % (columnNumber, position))
@@ -110,7 +109,7 @@ class SpaceInvader(object):
 			print('armDownColumn input error: %s' % columnNumber)
 
 	def armDownDisplay(self, position):
-		'''AA'''
+		'''Displays the space invader from parsed position with arms down'''
 
 		if self.args.verbose:
 			print('Running SpaceInvader.armDownDisplay, position: %s' %  position)
@@ -130,7 +129,7 @@ class SpaceInvader(object):
 			self.armDownColumn(9, position + 9)
 
 	def armUpColumn(self, columnNumber, position):
-		'''AAA'''
+		'''Sets the columns for when it has the arms down'''
 
 		if self.args.verbose:
 			print('Running SpaceInvader.armUpDown, columnNumber: %s, position: %s' % (columnNumber, position))
@@ -183,7 +182,7 @@ class SpaceInvader(object):
 			print('armDownColumn input error: %s' % columnNumber)
 
 	def armUpDisplay(self, position):
-		'''AA'''
+		'''Displays the space invader from parsed position with arms up'''
 
 		if self.args.verbose:
 			print('Running SpaceInvader.armDownDisplay, position: %s' %  position)
@@ -206,7 +205,7 @@ class SpaceInvader(object):
 	# DANCE
 	#
 	def dance(self):
-		'''AA'''
+		'''Displays the space invader dancing'''
 
 		if self.args.verbose:
 			print('Running SpaceInvader.dance')
@@ -230,7 +229,7 @@ class SpaceInvader(object):
 	# PULSE
 	#
 	def pulse(self):
-		'''Pulse the tree vertically from position'''
+		'''Displays the space invader pulsing'''
 
 		if self.args.verbose:
 			print('Running SpaceInvader.pulse')
@@ -291,7 +290,7 @@ class SpaceInvader(object):
 	# SCROLL
 	#
 	def scrollInSteps(self, stepNumber):
-		'''AA'''
+		'''Sets the columns positions from scrolling in from stepNumber'''
 
 		if self.args.verbose:
 			print('Running SpaceInvader.scrollInSteps, stepNumber: %s' %  stepNumber)
@@ -386,7 +385,7 @@ class SpaceInvader(object):
 		scrollphat.clear()
 
 	def scrollOutSteps(self, stepNumber):
-		'''AA'''
+		'''Sets the columns positions from scrolling out from stepNumber'''
 
 		if self.args.verbose:
 			print('Running SpaceInvader.scrollOutSteps, stepNumber: %s' %  stepNumber)
@@ -468,7 +467,7 @@ class SpaceInvader(object):
 		scrollphat.clear()
 
 	def scrollIn(self):
-		'''AAA'''
+		'''Displays the space-invader scrolling in'''
 
 		if self.args.verbose:
 			print('Running SpaceInvader.scrollIn')
@@ -478,7 +477,7 @@ class SpaceInvader(object):
 			self.scrollInSteps(i)
 
 	def scrollOut(self):
-		'''AAA'''
+		'''Displays the space-invader scrolling out'''
 
 		if self.args.verbose:
 			print('Running SpaceInvader.scrollIn')
@@ -497,14 +496,14 @@ def __main__(args):
     Parameters
     ----------
     args : argparse.Namespace(
+		verbose : bool
         brightness : int,
 		dance_times : int,
-		function : string,
+		pulse_times : int,
 		pause_dance : float,
 		pause_pulse : float,
 		pause_scroll : float,
-		pulse_times : int,
-		verbose : bool
+		function : string,
 	)
     Arguments parsed to run the main function of the script
 
