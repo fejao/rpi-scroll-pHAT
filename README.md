@@ -16,7 +16,8 @@ Displays a Christmas tree with many functions
 
 # pacman
 _____________________________________________
-Displays a Christmas tree with many functions
+Displays a scrolling Pacman figure
+[How to use the pacman.py](pacman/README.md)
 
 # twitter
 _____________________________________________
