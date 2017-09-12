@@ -25,20 +25,22 @@ Optional arguments:
   * Set the brightness, default: 5
 * **-p POSITION, --position POSITION**
   * Set the start position, default: 0
-* **-dt DANCE_TIMES, --dance_times DANCE_TIMES**
+* **-dt DANCE\_TIMES, --dance_times DANCE\_TIMES**
   * Set how many times to dance, default: 3
-* **-pt PULSE_TIMES, --pulse_times PULSE_TIMES**
+* **-pt PULSE\_TIMES, --pulse_times PULSE\_TIMES**
   * Set how many times to pulse, default: 3
-* **-st SNOW_TIMES, --snow_times SNOW_TIMES**
+* **-st SNOW\_TIMES, --snow_times SNOW\_TIMES**
   * Set how many times to snow, default: 3
-* **-pd PAUSE_DANCE, --pause-dance PAUSE_DANCE**
-  * Set the dance pause interval in seconds, default: 0.5
-* **-pp PAUSE_PULSE, --pause-pulse PAUSE_PULSE**
-  * Set the pulse pause interval in seconds, default: 0.25
-* **-ps PAUSE_SCROLL, --pause-scroll PAUSE_SCROLL**
-  * Set the scroll pause interval in seconds, default: 0.5
-* **-psn PAUSE_SNOW, --pause-snow PAUSE_SNOW**
+* **-pd PAUSE\_DANCE, --pause-dance PAUSE\_DANCE**
+  * Set the dance pause interval in seconds, default: 0.3
+* **-pp PAUSE\_PULSE, --pause-pulse PAUSE\_PULSE**
+  * Set the pulse pause interval in seconds, default: 0.3
+* **-ps PAUSE\_SCROLL, --pause-scroll PAUSE\_SCROLL**
+  * Set the scroll pause interval in seconds, default: 0.3
+* **-psn PAUSE\_SNOW, --pause-snow PAUSE\_SNOW**
   * Set the snow pause interval in seconds, default: 0.3
+* **-po PAUSE\_SHOW, --pause-show PAUSE\_SHOW**
+  * Set the show pause interval in seconds, default: 5
 * **-f FUNCTION, --function FUNCTION**
   * Set the function to run ('scroll-in', 'scroll-out', 'dance') type, default: show-horizontal-center
 
@@ -78,6 +80,8 @@ AAA
   * aaaaa
 * **horizontal-scroll-dance-out**
   * aaaaa
+* **horizontal-scroll-pulse-out**
+  * aaaaa
 
 ## Vertical functions
 
@@ -104,3 +108,16 @@ AAA
   * aaaaa
 * **vertical-scroll**
   * aaaaa
+* **vertical-scroll-dance-out**
+  * aaaaa
+* **vertical-scroll-pulse-out**
+  * aaaaa
+
+## Other functions
+* **clear**
+  * Clears the *scroll-pHAT* display
+  * Example:
+
+    ```
+    $ python pacman.py -f clear
+    ```

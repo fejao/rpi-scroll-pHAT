@@ -10,7 +10,7 @@ The arguments that can be used with the script:
 ```
 $ python space-invader.py [-h] [-v] [-b BRIGHTNESS] [-dt DANCE_TIMES]
                          [-pt PULSE_TIMES] [-pd PAUSE_DANCE] [-pp PAUSE_PULSE]
-                         [-ps PAUSE_SCROLL] [-f FUNCTION]
+                         [-ps PAUSE_SCROLL] [-po PAUSE_SHOW] [-f FUNCTION]
 ```
 
 Optional arguments:
@@ -31,6 +31,8 @@ Optional arguments:
   * Set the pulse pause interval in seconds, default: 0.3
 * **-ps PAUSE\_SCROLL, --pause-scroll PAUSE\_SCROLL**
   * Set the scroll pause interval in seconds, default: 0.3
+* **-po PAUSE\_SHOW, --pause-show PAUSE\_SHOW**
+  * Set the show pause interval in seconds, default: 5
 * **-f FUNCTION, --function FUNCTION**
   * Set the function to run ('dance', 'pulse', 'show','scroll-in', 'scroll-out', 'scroll', 'scroll-and-dance', 'scroll-and-pulse', 'clear'), default: scroll-and-pulse
 
@@ -48,7 +50,7 @@ Optional arguments:
       $ python space-invader.py -f dance -b 7 -dt 3 -pd 0.2
       ```
 
-      ![Alt text](../pacman/dance-left.gif?raw=true "Pacman dance-left scroll-pHAT")
+      ![Imgur Image](http://i.imgur.com/w1VbJJ1.gif)
 
 * **pulse**
   * Display the *Space-Invader* figure pulsing.
@@ -61,19 +63,33 @@ Optional arguments:
       $ python space-invader.py -f pulse -pt 3 -pp 0.4
       ```
 
-      ![Alt text](../pacman/pulse-left.gif?raw=true "Pacman pulse-left scroll-pHAT")
+      ![Imgur Image](http://i.imgur.com/HuSA28G.gif)
 
-* **show**
-  * Display the *Space-Invader*.
+* **show-arms-down**
+  * Display the *Space-Invader* with the arms down.
   * It can be used with:
       * **-b/--brightness**
+      * **-po/--pause_show**
   * Example:
 
       ```
-      $ python space-invader.py -f show -b 5
+      $ python space-invader.py -f show-arms-down -b 5 -po 1.3
       ```
 
-      ![Alt text](../pacman/pulse-left.gif?raw=true "Pacman pulse-left scroll-pHAT")
+      ![Imgur Image](http://i.imgur.com/NPYSzSB.gif)
+
+  * **show-arms-up**
+    * Display the *Space-Invader* with the arms up.
+    * It can be used with:
+        * **-b/--brightness**
+        * **-po/--pause_show**
+    * Example:
+
+        ```
+        $ python space-invader.py -f show-arms-up -b 4 -po 2.3
+        ```
+
+        ![Imgur Image](http://i.imgur.com/U5vqD0F.gif)
 
 * **scroll-in**
   * Scroll-in the *Space-Invader* figure.
@@ -87,7 +103,7 @@ Optional arguments:
       $ python space-invader.py -f scroll-in -b 5 -ps 0.6
       ```
 
-      ![Alt text](../pacman/pulse-left.gif?raw=true "Pacman pulse-left scroll-pHAT")
+      ![Imgur Image](http://i.imgur.com/C7uPH6d.gif)
 
 * **scroll-out**
   * Scroll-out the *Space-Invader* figure.
@@ -101,7 +117,21 @@ Optional arguments:
       $ python space-invader.py -f scroll-in -b 5 -ps 0.6
       ```
 
-      ![Alt text](../pacman/pulse-left.gif?raw=true "Pacman pulse-left scroll-pHAT")
+      ![Imgur Image](http://i.imgur.com/uWuKPgm.gif)
+
+* **scroll**
+  * Scroll-in and out the *Space-Invader* figure.
+  * It can be used with:
+      * **-b/--brightness**
+      * **-ps/--pause-scroll**
+  * Example:
+
+      ```
+      $ python space-invader.py -f scroll -b 7 -ps 1.8
+      ```
+
+      ![Imgur Image](http://i.imgur.com/A8x8uYr.gif)
+
 
 * **scroll-and-dance**
   * Scroll-in the *Space-Invader* figure, dancing in the middle and scroll-out.
@@ -115,7 +145,7 @@ Optional arguments:
       $ python space-invader.py -f scroll-and-dance -pd 0.4 -ps 0.5
       ```
 
-      ![Alt text](../pacman/pulse-left.gif?raw=true "Pacman pulse-left scroll-pHAT")
+      ![Imgur Image](http://i.imgur.com/0RxCdsr.gif)
 
 * **scroll-and-pulse**
   * Scroll-in the *Space-Invader* figure, pulsing in the middle and scroll-out.
@@ -129,4 +159,13 @@ Optional arguments:
       $ python space-invader.py -f scroll-and-dance -pp 0.5 -ps 0.4
       ```
 
-      ![Alt text](../pacman/pulse-left.gif?raw=true "Pacman pulse-left scroll-pHAT")
+      ![Imgur Image](http://i.imgur.com/x8ZZOrJ.gif)
+
+## Other functions
+* **clear**
+  * Clears the *scroll-pHAT* display
+  * Example:
+
+    ```
+    $ python pacman.py -f clear
+    ```

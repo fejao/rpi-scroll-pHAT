@@ -17,16 +17,18 @@ optional arguments:
   -pt PULSE_TIMES, --pulse_times PULSE_TIMES
                         Set how many times to pulse, default: 3
   -pd PAUSE_DANCE, --pause-dance PAUSE_DANCE
-                        Set the dance pause interval in seconds, default: 0.5
+                        Set the dance pause interval in seconds, default: 0.3
   -pp PAUSE_PULSE, --pause-pulse PAUSE_PULSE
-                        Set the pulse pause interval in seconds, default: 0.25
+                        Set the pulse pause interval in seconds, default: 0.3
   -ps PAUSE_SCROLL, --pause-scroll PAUSE_SCROLL
-                        Set the scroll pause interval in seconds, default: 0.5
+                        Set the scroll pause interval in seconds, default: 0.3
+  -po PAUSE_SHOW, --pause-show PAUSE_SHOW
+                        Set the show pause interval in seconds, default: 5
   -f FUNCTION, --function FUNCTION
-                        Set the function to run ('dance', 'pulse', 'show',
-                        'scroll-in', 'scroll-out', 'scroll', 'scroll-and-
-                        dance', 'scroll-and-pulse', 'clear') type, default:
-                        scroll-and-pulse
+                        Set the function to run ('dance', 'pulse', 'show-arms-
+                        down', 'show-arms-up', 'scroll-in', 'scroll-out',
+                        'scroll', 'scroll-and-dance', 'scroll-and-pulse',
+                        'clear'), default: scroll-and-pulse
 '''
 
 import argparse
@@ -46,6 +48,7 @@ DEFAULT_FUNCTION_NAME = 'scroll-and-pulse'
 DEFAULT_PAUSE_DANCE = 0.3
 DEFAULT_PAUSE_PULSE = 0.3
 DEFAULT_PAUSE_SCROLL = 0.3
+DEFAULT_PAUSE_SHOW = 5
 
 DEFAULT_SCROLL_DISTANCE = 11
 
@@ -472,7 +475,6 @@ class SpaceInvader(object):
 		if self.args.verbose:
 			print('Running SpaceInvader.scrollIn')
 
-		#~ for i in range(1, 11):
 		for i in range(1, DEFAULT_SCROLL_DISTANCE):
 			self.scrollInSteps(i)
 
@@ -503,6 +505,7 @@ def __main__(args):
 		pause_dance : float,
 		pause_pulse : float,
 		pause_scroll : float,
+		pause_show : float,
 		function : string,
 	)
     Arguments parsed to run the main function of the script
@@ -535,10 +538,17 @@ def __main__(args):
 			elif args.function == 'pulse':
 				spaceInvader.pulse()
 
-			elif args.function == 'show':
+			elif args.function == 'show-arms-down':
 				spaceInvader.armDownDisplay(0)
 				scrollphat.update()
-				time.sleep(100)
+				time.sleep(args.pause_show)
+				scrollphat.clear()
+
+			elif args.function == 'show-arms-up':
+				spaceInvader.armUpDisplay(0)
+				scrollphat.update()
+				time.sleep(args.pause_show)
+				scrollphat.clear()
 
 			elif args.function == 'scroll-in':
 				spaceInvader.scrollIn()
@@ -591,8 +601,9 @@ parser.add_argument('-pt','--pulse_times', help="Set how many times to pulse, de
 parser.add_argument('-pd','--pause-dance', help="Set the dance pause interval in seconds, default: %s" % DEFAULT_PAUSE_DANCE, default=DEFAULT_PAUSE_DANCE, type=float)
 parser.add_argument('-pp','--pause-pulse', help="Set the pulse pause interval in seconds, default: %s" % DEFAULT_PAUSE_PULSE, default=DEFAULT_PAUSE_PULSE, type=float)
 parser.add_argument('-ps','--pause-scroll', help="Set the scroll pause interval in seconds, default: %s" % DEFAULT_PAUSE_SCROLL, default=DEFAULT_PAUSE_SCROLL, type=float)
-parser.add_argument('-f','--function', help="Set the function to run ('dance', 'pulse', 'show', 'scroll-in', \
-'scroll-out', 'scroll', 'scroll-and-dance', 'scroll-and-pulse', 'clear') type, default: %s" % DEFAULT_FUNCTION_NAME, default=DEFAULT_FUNCTION_NAME, type=str)
+parser.add_argument('-po','--pause-show', help="Set the show pause interval in seconds, default: %s" % DEFAULT_PAUSE_SHOW, default=DEFAULT_PAUSE_SHOW, type=float)
+parser.add_argument('-f','--function', help="Set the function to run ('dance', 'pulse', 'show-arms-down', 'show-arms-up', 'scroll-in', \
+'scroll-out', 'scroll', 'scroll-and-dance', 'scroll-and-pulse', 'clear'), default: %s" % DEFAULT_FUNCTION_NAME, default=DEFAULT_FUNCTION_NAME, type=str)
 
 args = parser.parse_args()
 

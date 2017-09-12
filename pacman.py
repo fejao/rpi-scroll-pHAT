@@ -3,7 +3,7 @@
 '''
 usage: pacman.py [-h] [-v] [-b BRIGHTNESS] [-p POSITION] [-dt DANCE_TIMES]
                  [-pt PULSE_TIMES] [-pd PAUSE_DANCE] [-pp PAUSE_PULSE]
-                 [-ps PAUSE_SCROLL] [-f FUNCTION]
+                 [-ps PAUSE_SCROLL] [-po PAUSE_SHOW] [-f FUNCTION]
 
 Display a Space-Invader character over your scroll-pHAT from Pimoroni
 
@@ -24,6 +24,8 @@ optional arguments:
                         Set the pulse pause interval in seconds, default: 0.3
   -ps PAUSE_SCROLL, --pause-scroll PAUSE_SCROLL
                         Set the scroll pause interval in seconds, default: 0.3
+  -po PAUSE_SHOW, --pause-show PAUSE_SHOW
+                        Set the show pause interval in seconds, default: 5
   -f FUNCTION, --function FUNCTION
                         Set the function to run ('dance-left', 'dance-right',
                         'pulse-left', 'pulse-right', 'show-closed', 'show-
@@ -54,6 +56,7 @@ DEFAULT_FUNCTION_NAME = 'scroll-left-right-pulse'
 DEFAULT_PAUSE_DANCE = 0.3
 DEFAULT_PAUSE_PULSE = 0.3
 DEFAULT_PAUSE_SCROLL = 0.3
+DEFAULT_PAUSE_SHOW = 5
 DEFAULT_SCROLL_DISTANCE = 8
 
 class Pacman(object):
@@ -620,6 +623,7 @@ def __main__(args):
 		pause_dance : float,
 		pause_pulse : float,
 		pause_scroll : float,
+		pause_show : float,
 		function : string,
 	)
     Arguments parsed to run the main function of the script
@@ -662,13 +666,13 @@ def __main__(args):
 			elif args.function == 'show-open-left':
 				pacman.mouthOpenDisplayLeft(args.position)
 				scrollphat.update()
-				time.sleep(3)
+				time.sleep(args.pause_show)
 				scrollphat.clear()
 
 			elif args.function == 'show-open-right':
 				pacman.mouthOpenDisplayRight(args.position)
 				scrollphat.update()
-				time.sleep(3)
+				time.sleep(args.pause_show)
 				scrollphat.clear()
 
 			elif args.function == 'scroll-left-right-in':
@@ -760,6 +764,7 @@ parser.add_argument('-pt','--pulse_times', help="Set how many times to pulse, de
 parser.add_argument('-pd','--pause-dance', help="Set the dance pause interval in seconds, default: %s" % DEFAULT_PAUSE_DANCE, default=DEFAULT_PAUSE_DANCE, type=float)
 parser.add_argument('-pp','--pause-pulse', help="Set the pulse pause interval in seconds, default: %s" % DEFAULT_PAUSE_PULSE, default=DEFAULT_PAUSE_PULSE, type=float)
 parser.add_argument('-ps','--pause-scroll', help="Set the scroll pause interval in seconds, default: %s" % DEFAULT_PAUSE_SCROLL, default=DEFAULT_PAUSE_SCROLL, type=float)
+parser.add_argument('-po','--pause-show', help="Set the show pause interval in seconds, default: %s" % DEFAULT_PAUSE_SHOW, default=DEFAULT_PAUSE_SHOW, type=float)
 parser.add_argument('-f','--function', help="Set the function to run ('dance-left', 'dance-right', 'pulse-left', 'pulse-right', 'show-closed', \
 'show-open-left', 'show-open-right',  'scroll-left-right-in', 'scroll-left-right-out', 'scroll-left-right', 'scroll-left-right-dance', 'scroll-left-right-in-pulse', \
 'scroll-right-left-in', 'scroll-right-left-out', 'scroll-right-left', 'scroll-right-left-dance', 'scroll-right-left-pulse', 'clear') \

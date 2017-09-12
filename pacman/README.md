@@ -10,7 +10,7 @@ The arguments that can be used with the script:
 ```
 $ python pacman.py [-h] [-v] [-b BRIGHTNESS] [-p POSITION] [-dt DANCE_TIMES]
                  [-pt PULSE_TIMES] [-pd PAUSE_DANCE] [-pp PAUSE_PULSE]
-                 [-ps PAUSE_SCROLL] [-f FUNCTION]
+                 [-ps PAUSE_SCROLL] [-po PAUSE_SHOW] [-f FUNCTION]
 ```
 
 Optional arguments:
@@ -31,8 +31,10 @@ Optional arguments:
   * Set the pulse pause interval in seconds, default: 0.3
 * **-ps PAUSE\_SCROLL, --pause-scroll PAUSE\_SCROLL**
   * Set the scroll pause interval in seconds, default: 0.3
+* **-po PAUSE\_SHOW, --pause-show PAUSE\_SHOW**
+  * Set the show pause interval in seconds, default: 5
 * **-f FUNCTION, --function FUNCTION**
-  * Set the function to run ('dance-left', 'dance-right', 'pulse-left', 'pulse-right', 'show-closed', 'show-open-left', 'show-open-right', 'scroll-left-right-in', 'scroll-left-right-out', 'scroll-left-right', 'scroll-left-right-dance', 'scroll-left-right-in-pulse', 'scroll-right-left-in', 'scroll-right-left-out', 'scroll-right-left', 'scroll-right-left-dance', 'scroll-right-left-pulse', 'clear') , default: scroll-left-right-pulse
+  * Set the function to run ('dance-left', 'dance-right', 'pulse-left', 'pulse-right', 'show-closed', 'show-open-left', 'show-open-right', 'scroll-left-right-in', 'scroll-left-right-out', 'scroll-left-right', 'scroll-left-right-dance', 'scroll-left-right-in-pulse', 'scroll-right-left-in', 'scroll-right-left-out', 'scroll-right-left', 'scroll-right-left-dance', 'scroll-right-left-pulse', 'clear'), default: scroll-left-right-pulse
 
 # Functions
 This are the already fixed functions, fell free to add or change
@@ -113,10 +115,11 @@ This are the already fixed functions, fell free to add or change
   * It can be used with:
       * **-b/--brightness**
       * **-p/--position**
+      * **-po/--pause_show**
   * Example:
 
       ```
-      $ python pacman.py -f show-open-left -p 2 -b 3
+      $ python pacman.py -f show-open-left -p 2 -b 3 -po 1.7
       ```
 
       ![Imgur Image](http://i.imgur.com/cP8MvpM.jpg)
@@ -126,10 +129,11 @@ This are the already fixed functions, fell free to add or change
   * It can be used with:
       * **-b/--brightness**
       * **-p/--position**
+      * **-po/--pause_show**
   * Example:
 
       ```
-      $ python pacman.py -f show-open-right -p 5 -b 7
+      $ python pacman.py -f show-open-right -p 5 -b 7 -po 2.5
       ```
 
       ![Imgur Image](http://i.imgur.com/3X8jInZ.jpg)
@@ -274,3 +278,12 @@ This are the already fixed functions, fell free to add or change
     ```
 
     ![Imgur Image](http://i.imgur.com/bTZe3tQ.gif)
+
+## Other functions
+* **clear**
+  * Clears the *scroll-pHAT* display
+  * Example:
+
+    ```
+    $ python pacman.py -f clear
+    ```

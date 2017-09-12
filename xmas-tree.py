@@ -22,13 +22,15 @@ optional arguments:
   -st SNOW_TIMES, --snow_times SNOW_TIMES
                         Set how many times to snow, default: 3
   -pd PAUSE_DANCE, --pause-dance PAUSE_DANCE
-                        Set the dance pause interval in seconds, default: 0.5
+                        Set the dance pause interval in seconds, default: 0.3
   -pp PAUSE_PULSE, --pause-pulse PAUSE_PULSE
-                        Set the pulse pause interval in seconds, default: 0.25
+                        Set the pulse pause interval in seconds, default: 0.3
   -ps PAUSE_SCROLL, --pause-scroll PAUSE_SCROLL
-                        Set the scroll pause interval in seconds, default: 0.5
+                        Set the scroll pause interval in seconds, default: 0.3
   -psn PAUSE_SNOW, --pause-snow PAUSE_SNOW
                         Set the snow pause interval in seconds, default: 0.3
+  -po PAUSE_SHOW, --pause-show PAUSE_SHOW
+                        Set the show pause interval in seconds, default: 5
   -f FUNCTION, --function FUNCTION
                         Set the function to run ('horizontal-dance',
                         'horizontal-dance-middle', 'horizontal-pulse',
@@ -36,13 +38,14 @@ optional arguments:
                         'horizontal-show-left', 'horizontal-show-right',
                         'horizontal-show.middle', 'horizontal-scroll-in',
                         'horizontal-scroll-out', 'horizontal-scroll',
-                        'horizontal-scroll-dance-out', 'vertical-show-center',
-                        'vertical-show-left', 'vertical-show-right',
-                        'vertical-show-middle', 'vertical-dance', 'vertical-
-                        dance-middle', 'vertical-pulse', 'vertical-pulse-
-                        middle', 'vertical-scroll-in', 'vertical-scroll-out',
-                        'vertical-scroll', 'snow-fall', 'clear') type,
-                        default: horizontal-show-middle
+                        'horizontal-scroll-dance-out', 'horizontal-scroll-
+                        pulse-out', 'vertical-show-center', 'vertical-show-
+                        left', 'vertical-show-right', 'vertical-show-middle',
+                        'vertical-dance', 'vertical-dance-middle', 'vertical-
+                        pulse', 'vertical-pulse-middle', 'vertical-scroll-in',
+                        'vertical-scroll-out', 'vertical-scroll', 'vertical-
+                        scroll-dance-out', 'vertical-scroll-pulse-out', 'snow-
+                        fall', 'clear'), default: horizontal-show-middlee
 
 '''
 
@@ -62,25 +65,27 @@ DEFAULT_PULSE_TIMES = 3
 DEFAULT_SNOW_TIMES = 3
 DEFAULT_FUNCTION_NAME = 'horizontal-show-middle'
 DEFAULT_POSITION = 0
-DEFAULT_PAUSE_DANCE = 0.5
-DEFAULT_PAUSE_PULSE = 0.25
-DEFAULT_PAUSE_SCROLL = 0.5
+DEFAULT_PAUSE_DANCE = 0.3
+DEFAULT_PAUSE_PULSE = 0.3
+DEFAULT_PAUSE_SCROLL = 0.3
 DEFAULT_PAUSE_SNOW = 0.3
+DEFAULT_PAUSE_SHOW = 5
 DEFAULT_HORIZONTAL_SCROLL = 9
 DEFAULT_VERTICAL_SCROLL = 9
 
 class Snow(object):
 	'''Class for display snow'''
 
-	def __init__(self, fallSpeed, fallTimes):
+	def __init__(self, verbose, fallSpeed, fallTimes):
 
+		self.verbose = verbose
 		self.fallSpeed = fallSpeed
 		self.fallTimes = fallTimes
 
 	def bufferFall(self, buf):
 		'''Sets the buffer for snow'''
 
-		if self.args.verbose:
+		if self.verbose:
 			print('Running Snow.bufferFall, buf: %s' % buf)
 
 		scrollphat.set_buffer(buf)
@@ -90,7 +95,7 @@ class Snow(object):
 	def fall(self):
 		'''Displays snow like pixels falling'''
 
-		if self.args.verbose:
+		if self.verbose:
 			print('Running Snow.fall')
 
 		buf_00 = [ 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0]
@@ -334,8 +339,6 @@ class DisplayHorizontal(object):
 		self.columnCenterPosition(6, 8)
 
 		scrollphat.update()
-		time.sleep(self.args.pause_scroll)
-		scrollphat.clear()
 
 	#
 	# DANCE
@@ -1026,21 +1029,29 @@ class XmasTree(object):
 				tree = DisplayHorizontal(self.args)
 				tree.setPositionCenter(self.args.position)
 				scrollphat.update()
+				time.sleep(self.args.pause_show)
+				scrollphat.clear()
 
 			elif self.functionName == 'horizontal-show-left':
 				tree = DisplayHorizontal(self.args)
 				tree.setPositionLeft(self.args.position)
 				scrollphat.update()
+				time.sleep(self.args.pause_show)
+				scrollphat.clear()
 
 			elif self.functionName == 'horizontal-show-right':
 				tree = DisplayHorizontal(self.args)
 				tree.setPositionRight(self.args.position)
 				scrollphat.update()
+				time.sleep(self.args.pause_show)
+				scrollphat.clear()
 
 			elif self.functionName == 'horizontal-show-middle':
 				tree = DisplayHorizontal(self.args)
 				tree.setPositionCenter(2)
 				scrollphat.update()
+				time.sleep(self.args.pause_show)
+				scrollphat.clear()
 
 			elif self.functionName == 'horizontal-scroll-in':
 				tree = DisplayHorizontal(self.args)
@@ -1064,25 +1075,41 @@ class XmasTree(object):
 				tree.setPositionMiddle()
 				tree.scrollOut()
 
+			elif self.functionName == 'horizontal-scroll-pulse-out':
+				tree = DisplayHorizontal(self.args)
+				tree.scrollIn()
+				tree.setPositionMiddle()
+				tree.pulse(2)
+				tree.setPositionMiddle()
+				tree.scrollOut()
+
 			elif self.functionName == 'vertical-show-center':
 				tree = DisplayVertical(self.args)
 				tree.setPositionCenter(self.args.position)
 				scrollphat.update()
+				time.sleep(self.args.pause_show)
+				scrollphat.clear()
 
 			elif self.functionName == 'vertical-show-left':
 				tree = DisplayVertical(self.args)
 				tree.setPositionLeft(self.args.position)
 				scrollphat.update()
+				time.sleep(self.args.pause_show)
+				scrollphat.clear()
 
 			elif self.functionName == 'vertical-show-right':
 				tree = DisplayVertical(self.args)
 				tree.setPositionRight(self.args.position)
 				scrollphat.update()
+				time.sleep(self.args.pause_show)
+				scrollphat.clear()
 
 			elif self.functionName == 'vertical-show-middle':
 				tree = DisplayVertical(self.args)
 				tree.setPositionCenter(2)
 				scrollphat.update()
+				time.sleep(self.args.pause_show)
+				scrollphat.clear()
 
 			elif self.functionName == 'vertical-dance':
 				tree = DisplayVertical(self.args)
@@ -1116,8 +1143,24 @@ class XmasTree(object):
 				tree.setPositionMiddle()
 				tree.scrollOut()
 
+			elif self.functionName == 'vertical-scroll-dance-out':
+				tree = DisplayVertical(self.args)
+				tree.scrollIn()
+				tree.setPositionMiddle()
+				tree.dance(2)
+				tree.setPositionMiddle()
+				tree.scrollOut()
+
+			elif self.functionName == 'vertical-scroll-pulse-out':
+				tree = DisplayVertical(self.args)
+				tree.scrollIn()
+				tree.setPositionMiddle()
+				tree.pulse(2)
+				tree.setPositionMiddle()
+				tree.scrollOut()
+
 			elif self.functionName == 'snow-fall':
-				snow = Snow(self.args.pause_snow, self.args.snow_times)
+				snow = Snow(self.args.verbose, self.args.pause_snow, self.args.snow_times)
 				snow.fall()
 
 			elif self.functionName == 'clear':
@@ -1146,6 +1189,7 @@ def __main__(args):
 		pause_pulse : float,
 		pause_scroll : float,
 		pause_snow : float,
+		pause_show : float,
 		position : int,
 		pulse_times : int,
 		snow_times : int,
@@ -1184,11 +1228,13 @@ parser.add_argument('-pd','--pause-dance', help="Set the dance pause interval in
 parser.add_argument('-pp','--pause-pulse', help="Set the pulse pause interval in seconds, default: %s" % DEFAULT_PAUSE_PULSE, default=DEFAULT_PAUSE_PULSE, type=float)
 parser.add_argument('-ps','--pause-scroll', help="Set the scroll pause interval in seconds, default: %s" % DEFAULT_PAUSE_SCROLL, default=DEFAULT_PAUSE_SCROLL, type=float)
 parser.add_argument('-psn','--pause-snow', help="Set the snow pause interval in seconds, default: %s" % DEFAULT_PAUSE_SNOW, default=DEFAULT_PAUSE_SNOW, type=float)
+parser.add_argument('-po','--pause-show', help="Set the show pause interval in seconds, default: %s" % DEFAULT_PAUSE_SHOW, default=DEFAULT_PAUSE_SHOW, type=float)
 parser.add_argument('-f','--function', help="Set the function to run \
 ('horizontal-dance', 'horizontal-dance-middle', 'horizontal-pulse', 'horizontal-pulse-middle', 'horizontal-show-center', 'horizontal-show-left', 'horizontal-show-right', \
-'horizontal-show.middle', 'horizontal-scroll-in', 'horizontal-scroll-out', 'horizontal-scroll', 'horizontal-scroll-dance-out', 'vertical-show-center', 'vertical-show-left', \
-'vertical-show-right', 'vertical-show-middle', 'vertical-dance', 'vertical-dance-middle', 'vertical-pulse', 'vertical-pulse-middle', 'vertical-scroll-in', 'vertical-scroll-out', \
-'vertical-scroll', 'snow-fall', 'clear') type, default: %s" % DEFAULT_FUNCTION_NAME, default=DEFAULT_FUNCTION_NAME, type=str)
+'horizontal-show.middle', 'horizontal-scroll-in', 'horizontal-scroll-out', 'horizontal-scroll', 'horizontal-scroll-dance-out', 'horizontal-scroll-pulse-out', \
+'vertical-show-center', 'vertical-show-left', 'vertical-show-right', 'vertical-show-middle', 'vertical-dance', 'vertical-dance-middle', 'vertical-pulse', \
+'vertical-pulse-middle', 'vertical-scroll-in', 'vertical-scroll-out', 'vertical-scroll',  'vertical-scroll-dance-out',  'vertical-scroll-pulse-out', 'snow-fall', \
+'clear'), default: %s" % DEFAULT_FUNCTION_NAME, default=DEFAULT_FUNCTION_NAME, type=str)
 
 args = parser.parse_args()
 
