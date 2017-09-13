@@ -45,73 +45,73 @@ Optional arguments:
   * Set the function to run ('scroll-in', 'scroll-out', 'dance') type, default: show-horizontal-center
 
 # Functions
-AAA
+This are the already fixed functions, fell free to add or change
 
 ## Snow
 * **snow-fall**
-  * aaaaa
+  * WIP
 
 ## Clear
 * **clear**
-  * aaaaa
+  * WIP
 
 ## Horizontal Functions
 * **horizontal-dance**
-  * aaaaa
+  * WIP
 * **horizontal-dance-middle**
-  * aaaaa
+  * WIP
 * **horizontal-pulse**
-  * aaaaa
+  * WIP
 * **horizontal-pulse-middle**
-  * aaaaa
+  * WIP
 * **horizontal-show-center**
-  * aaaaa
+  * WIP
 * **horizontal-show-left**
-  * aaaaa
+  * WIP
 * **horizontal-show-right**
-  * aaaaa
+  * WIP
 * **horizontal-show-middle**
-  * aaaaa
+  * WIP
 * **horizontal-scroll-in**
-  * aaaaa
+  * WIP
 * **horizontal-scroll-out**
-  * aaaaa
+  * WIP
 * **horizontal-scroll**
-  * aaaaa
+  * WIP
 * **horizontal-scroll-dance-out**
-  * aaaaa
+  * WIP
 * **horizontal-scroll-pulse-out**
-  * aaaaa
+  * WIP
 
 ## Vertical functions
 
 
 * **vertical-show-center**
-  * aaaaa
+  * WIP
 * **vertical-show-left**
-  * aaaaa
+  * WIP
 * **vertical-show-right**
-  * aaaaa
+  * WIP
 * **vertical-show-middle**
-  * aaaaa
+  * WIP
 * **vertical-dance**
-  * aaaaa
+  * WIP
 * **vertical-dance-middle**
-  * aaaaa
+  * WIP
 * **vertical-pulse**
-  * aaaaa
+  * WIP
 * **vertical-pulse-middle**
-  * aaaaa
+  * WIP
 * **vertical-scroll-in**
-  * aaaaa
+  * WIP
 * **vertical-scroll-out**
-  * aaaaa
+  * WIP
 * **vertical-scroll**
-  * aaaaa
+  * WIP
 * **vertical-scroll-dance-out**
-  * aaaaa
+  * WIP
 * **vertical-scroll-pulse-out**
-  * aaaaa
+  * WIP
 
 ## Other functions
 * **clear**

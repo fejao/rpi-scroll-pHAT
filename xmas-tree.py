@@ -22,11 +22,11 @@ optional arguments:
   -st SNOW_TIMES, --snow_times SNOW_TIMES
                         Set how many times to snow, default: 3
   -pd PAUSE_DANCE, --pause-dance PAUSE_DANCE
-                        Set the dance pause interval in seconds, default: 0.3
+                        Set the dance pause interval in seconds, default: 0.5
   -pp PAUSE_PULSE, --pause-pulse PAUSE_PULSE
-                        Set the pulse pause interval in seconds, default: 0.3
+                        Set the pulse pause interval in seconds, default: 0.25
   -ps PAUSE_SCROLL, --pause-scroll PAUSE_SCROLL
-                        Set the scroll pause interval in seconds, default: 0.3
+                        Set the scroll pause interval in seconds, default: 0.5
   -psn PAUSE_SNOW, --pause-snow PAUSE_SNOW
                         Set the snow pause interval in seconds, default: 0.3
   -po PAUSE_SHOW, --pause-show PAUSE_SHOW
@@ -425,61 +425,32 @@ class DisplayHorizontal(object):
 			self.columnCenterPosition(0, 10)
 
 		elif stepNumber == 2:
-			self.columnCenterPosition(0, 9)
-			self.columnCenterPosition(1, 10)
+			for i in range(0, 2):
+				self.columnCenterPosition(i, i + 9)
 
 		elif stepNumber == 3:
-			self.columnCenterPosition(0, 8)
-			self.columnCenterPosition(1, 9)
-			self.columnCenterPosition(2, 10)
+			for i in range(0, 3):
+				self.columnCenterPosition(i, i + 8)
 
 		elif stepNumber == 4:
-			self.columnCenterPosition(0, 7)
-			self.columnCenterPosition(1, 8)
-			self.columnCenterPosition(2, 9)
-			self.columnCenterPosition(3, 10)
+			for i in range(0, 4):
+				self.columnCenterPosition(i, i + 7)
 
 		elif stepNumber == 5:
-			self.columnCenterPosition(0, 6)
-			self.columnCenterPosition(1, 7)
-			self.columnCenterPosition(2, 8)
-			self.columnCenterPosition(3, 9)
-			self.columnCenterPosition(4, 10)
+			for i in range(0, 5):
+				self.columnCenterPosition(i, i + 6)
 
 		elif stepNumber == 6:
-			self.columnCenterPosition(0, 5)
-			self.columnCenterPosition(1, 6)
-			self.columnCenterPosition(2, 7)
-			self.columnCenterPosition(3, 8)
-			self.columnCenterPosition(4, 9)
-			self.columnCenterPosition(5, 10)
+			for i in range(0, 6):
+				self.columnCenterPosition(i, i + 5)
 
 		elif stepNumber == 7:
-			self.columnCenterPosition(0, 4)
-			self.columnCenterPosition(1, 5)
-			self.columnCenterPosition(2, 6)
-			self.columnCenterPosition(3, 7)
-			self.columnCenterPosition(4, 8)
-			self.columnCenterPosition(5, 9)
-			self.columnCenterPosition(6, 10)
+			for i in range(0, 7):
+				self.columnCenterPosition(i, i + 4)
 
 		elif stepNumber == 8:
-			self.columnCenterPosition(0, 3)
-			self.columnCenterPosition(1, 4)
-			self.columnCenterPosition(2, 5)
-			self.columnCenterPosition(3, 6)
-			self.columnCenterPosition(4, 7)
-			self.columnCenterPosition(5, 8)
-			self.columnCenterPosition(6, 9)
-
-		elif stepNumber == 9:
-			self.columnCenterPosition(0, 2)
-			self.columnCenterPosition(1, 3)
-			self.columnCenterPosition(2, 4)
-			self.columnCenterPosition(3, 5)
-			self.columnCenterPosition(4, 6)
-			self.columnCenterPosition(5, 7)
-			self.columnCenterPosition(6, 8)
+			for i in range(0, 7):
+				self.columnCenterPosition(i, i + 3)
 
 		scrollphat.update()
 		time.sleep(self.args.pause_scroll)
@@ -492,52 +463,32 @@ class DisplayHorizontal(object):
 			print('Running DisplayHorizontal.scrollOutSteps, stepNumber: %s' %  stepNumber)
 
 		if stepNumber == 1:
-			self.columnCenterPosition(0, 1)
-			self.columnCenterPosition(1, 2)
-			self.columnCenterPosition(2, 3)
-			self.columnCenterPosition(3, 4)
-			self.columnCenterPosition(4, 5)
-			self.columnCenterPosition(5, 6)
-			self.columnCenterPosition(6, 7)
+			for i in range(0, 7):
+				self.columnCenterPosition(i, i + 1)
 
 		elif stepNumber == 2:
-			self.columnCenterPosition(0, 0)
-			self.columnCenterPosition(1, 1)
-			self.columnCenterPosition(2, 2)
-			self.columnCenterPosition(3, 3)
-			self.columnCenterPosition(4, 4)
-			self.columnCenterPosition(5, 5)
-			self.columnCenterPosition(6, 6)
+			for i in range(0, 7):
+				self.columnCenterPosition(i, i)
 
 		elif stepNumber == 3:
-			self.columnCenterPosition(1, 0)
-			self.columnCenterPosition(2, 1)
-			self.columnCenterPosition(3, 2)
-			self.columnCenterPosition(4, 3)
-			self.columnCenterPosition(5, 4)
-			self.columnCenterPosition(6, 5)
+			for i in range(1, 7):
+				self.columnCenterPosition(i, i - 1)
 
 		elif stepNumber == 4:
-			self.columnCenterPosition(2, 0)
-			self.columnCenterPosition(3, 1)
-			self.columnCenterPosition(4, 2)
-			self.columnCenterPosition(5, 3)
-			self.columnCenterPosition(6, 4)
+			for i in range(2, 7):
+				self.columnCenterPosition(i, i - 2)
 
 		elif stepNumber == 5:
-			self.columnCenterPosition(3, 0)
-			self.columnCenterPosition(4, 1)
-			self.columnCenterPosition(5, 2)
-			self.columnCenterPosition(6, 3)
+			for i in range(3, 7):
+				self.columnCenterPosition(i, i - 3)
 
 		elif stepNumber == 6:
-			self.columnCenterPosition(4, 0)
-			self.columnCenterPosition(5, 1)
-			self.columnCenterPosition(6, 2)
+			for i in range(4, 7):
+				self.columnCenterPosition(i, i - 4)
 
 		elif stepNumber == 7:
-			self.columnCenterPosition(5, 0)
-			self.columnCenterPosition(6, 1)
+			for i in range(5, 7):
+				self.columnCenterPosition(i, i - 5)
 
 		elif stepNumber == 8:
 			self.columnCenterPosition(6, 0)
@@ -848,61 +799,32 @@ class DisplayVertical(object):
 			self.columnCenterPosition(6, 0)
 
 		elif stepNumber == 2:
-			self.columnCenterPosition(6, 1)
-			self.columnCenterPosition(5, 0)
+			for i in range(0, 2):
+				self.columnCenterPosition(i + 5, i)
 
 		elif stepNumber == 3:
-			self.columnCenterPosition(6, 2)
-			self.columnCenterPosition(5, 1)
-			self.columnCenterPosition(4, 0)
+			for i in range(0, 3):
+				self.columnCenterPosition(i + 4, i)
 
 		elif stepNumber == 4:
-			self.columnCenterPosition(6, 3)
-			self.columnCenterPosition(5, 2)
-			self.columnCenterPosition(4, 1)
-			self.columnCenterPosition(3, 0)
+			for i in range(0, 4):
+				self.columnCenterPosition(i + 3, i)
 
 		elif stepNumber == 5:
-			self.columnCenterPosition(6, 4)
-			self.columnCenterPosition(5, 3)
-			self.columnCenterPosition(4, 2)
-			self.columnCenterPosition(3, 1)
-			self.columnCenterPosition(2, 0)
+			for i in range(0, 5):
+				self.columnCenterPosition(i + 2, i)
 
 		elif stepNumber == 6:
-			self.columnCenterPosition(6, 5)
-			self.columnCenterPosition(5, 4)
-			self.columnCenterPosition(4, 3)
-			self.columnCenterPosition(3, 2)
-			self.columnCenterPosition(2, 1)
-			self.columnCenterPosition(1, 0)
+			for i in range(0, 6):
+				self.columnCenterPosition(i + 1, i)
 
 		elif stepNumber == 7:
-			self.columnCenterPosition(6, 6)
-			self.columnCenterPosition(5, 5)
-			self.columnCenterPosition(4, 4)
-			self.columnCenterPosition(3, 3)
-			self.columnCenterPosition(2, 2)
-			self.columnCenterPosition(1, 1)
-			self.columnCenterPosition(0, 0)
+			for i in range(0, 7):
+				self.columnCenterPosition(i, i)
 
 		elif stepNumber == 8:
-			self.columnCenterPosition(6, 7)
-			self.columnCenterPosition(5, 6)
-			self.columnCenterPosition(4, 5)
-			self.columnCenterPosition(3, 4)
-			self.columnCenterPosition(2, 3)
-			self.columnCenterPosition(1, 2)
-			self.columnCenterPosition(0, 1)
-
-		elif stepNumber == 9:
-			self.columnCenterPosition(6, 8)
-			self.columnCenterPosition(5, 7)
-			self.columnCenterPosition(4, 6)
-			self.columnCenterPosition(3, 5)
-			self.columnCenterPosition(2, 4)
-			self.columnCenterPosition(1, 3)
-			self.columnCenterPosition(0, 2)
+			for i in range(0, 7):
+				self.columnCenterPosition(i, i + 1)
 
 		scrollphat.update()
 		time.sleep(self.args.pause_scroll)
@@ -915,52 +837,32 @@ class DisplayVertical(object):
 			print('Running DisplayVertical.scrollOutSteps, stepNumber: %s' %  stepNumber)
 
 		if stepNumber == 1:
-			self.columnCenterPosition(6, 9)
-			self.columnCenterPosition(5, 8)
-			self.columnCenterPosition(4, 7)
-			self.columnCenterPosition(3, 6)
-			self.columnCenterPosition(2, 5)
-			self.columnCenterPosition(1, 4)
-			self.columnCenterPosition(0, 3)
+			for i in range(0, 7):
+				self.columnCenterPosition(i, i + 3)
 
 		elif stepNumber == 2:
-			self.columnCenterPosition(6, 10)
-			self.columnCenterPosition(5, 9)
-			self.columnCenterPosition(4, 8)
-			self.columnCenterPosition(3, 7)
-			self.columnCenterPosition(2, 6)
-			self.columnCenterPosition(1, 5)
-			self.columnCenterPosition(0, 4)
+			for i in range(0, 7):
+				self.columnCenterPosition(i, i + 4)
 
 		elif stepNumber == 3:
-			self.columnCenterPosition(5, 10)
-			self.columnCenterPosition(4, 9)
-			self.columnCenterPosition(3, 8)
-			self.columnCenterPosition(2, 7)
-			self.columnCenterPosition(1, 6)
-			self.columnCenterPosition(0, 5)
+			for i in range(0, 6):
+				self.columnCenterPosition(i, i + 5)
 
 		elif stepNumber == 4:
-			self.columnCenterPosition(4, 10)
-			self.columnCenterPosition(3, 9)
-			self.columnCenterPosition(2, 8)
-			self.columnCenterPosition(1, 7)
-			self.columnCenterPosition(0, 6)
+			for i in range(0, 5):
+				self.columnCenterPosition(i, i + 6)
 
 		elif stepNumber == 5:
-			self.columnCenterPosition(3, 10)
-			self.columnCenterPosition(2, 9)
-			self.columnCenterPosition(1, 8)
-			self.columnCenterPosition(0, 7)
+			for i in range(0, 4):
+				self.columnCenterPosition(i, i + 7)
 
 		elif stepNumber == 6:
-			self.columnCenterPosition(2, 10)
-			self.columnCenterPosition(1, 9)
-			self.columnCenterPosition(0, 8)
+			for i in range(0, 3):
+				self.columnCenterPosition(i, i + 8)
 
 		elif stepNumber == 7:
-			self.columnCenterPosition(1, 10)
-			self.columnCenterPosition(0, 9)
+			for i in range(0, 2):
+				self.columnCenterPosition(i, i + 9)
 
 		elif stepNumber == 8:
 			self.columnCenterPosition(0, 10)

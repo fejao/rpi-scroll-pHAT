@@ -304,84 +304,48 @@ class SpaceInvader(object):
 
 		# Arm Up
 		elif stepNumber == 2:
-			self.armUpColumn(0, 9)
-			self.armUpColumn(1, 10)
+			for i in range(0, 2):
+				self.armUpColumn(i, i + 9)
 
 		# Arm Down
 		elif stepNumber == 3:
-			self.armDownColumn(0, 8)
-			self.armDownColumn(1, 9)
-			self.armDownColumn(2, 10)
+			for i in range(0, 3):
+				self.armDownColumn(i, i + 8)
 
 		# Arm Up
 		if stepNumber == 4:
-			self.armUpColumn(0, 7)
-			self.armUpColumn(1, 8)
-			self.armUpColumn(2, 9)
-			self.armUpColumn(3, 10)
+			for i in range(0, 4):
+				self.armUpColumn(i, i + 7)
 
 		# Arm Down
 		elif stepNumber == 5:
-			self.armDownColumn(0, 6)
-			self.armDownColumn(1, 7)
-			self.armDownColumn(2, 8)
-			self.armDownColumn(3, 9)
-			self.armDownColumn(4, 10)
+			for i in range(0, 5):
+				self.armDownColumn(i, i + 6)
 
 		# Arm Up
 		if stepNumber == 6:
-			self.armUpColumn(0, 5)
-			self.armUpColumn(1, 6)
-			self.armUpColumn(2, 7)
-			self.armUpColumn(3, 8)
-			self.armUpColumn(4, 9)
-			self.armUpColumn(5, 10)
+			for i in range(0, 6):
+				self.armUpColumn(i, i + 5)
 
 		# Arm Down
 		elif stepNumber == 7:
-			self.armDownColumn(0, 4)
-			self.armDownColumn(1, 5)
-			self.armDownColumn(2, 6)
-			self.armDownColumn(3, 7)
-			self.armDownColumn(4, 8)
-			self.armDownColumn(5, 9)
-			self.armDownColumn(6, 10)
+			for i in range(0, 7):
+				self.armDownColumn(i, i + 4)
 
 		# Arm Up
 		if stepNumber == 8:
-			self.armUpColumn(0, 3)
-			self.armUpColumn(1, 4)
-			self.armUpColumn(2, 5)
-			self.armUpColumn(3, 6)
-			self.armUpColumn(4, 7)
-			self.armUpColumn(5, 8)
-			self.armUpColumn(6, 9)
-			self.armUpColumn(7, 10)
+			for i in range(0, 8):
+				self.armUpColumn(i, i + 3)
 
 		# Arm Down
 		elif stepNumber == 9:
-			self.armDownColumn(0, 2)
-			self.armDownColumn(1, 3)
-			self.armDownColumn(2, 4)
-			self.armDownColumn(3, 5)
-			self.armDownColumn(4, 6)
-			self.armDownColumn(5, 7)
-			self.armDownColumn(6, 8)
-			self.armDownColumn(7, 9)
-			self.armDownColumn(8, 10)
+			for i in range(0, 9):
+				self.armDownColumn(i, i + 2)
 
 		# Arm Up
 		elif stepNumber == 10:
-			self.armUpColumn(0, 1)
-			self.armUpColumn(1, 2)
-			self.armUpColumn(2, 3)
-			self.armUpColumn(3, 4)
-			self.armUpColumn(4, 5)
-			self.armUpColumn(5, 6)
-			self.armUpColumn(6, 7)
-			self.armUpColumn(7, 8)
-			self.armUpColumn(8, 9)
-			self.armUpColumn(9, 10)
+			for i in range(0, 10):
+				self.armUpColumn(i, i + 1)
 
 		scrollphat.update()
 		time.sleep(self.args.pause_scroll)
@@ -395,71 +359,43 @@ class SpaceInvader(object):
 
 		# Arm Up
 		if stepNumber == 1:
-			self.armUpColumn(1, 0)
-			self.armUpColumn(2, 1)
-			self.armUpColumn(3, 2)
-			self.armUpColumn(4, 3)
-			self.armUpColumn(5, 4)
-			self.armUpColumn(6, 5)
-			self.armUpColumn(7, 6)
-			self.armUpColumn(8, 7)
-			self.armUpColumn(9, 8)
+			for i in range(1, 10):
+				self.armUpColumn(i, i - 1)
 
 		# Arm Down
 		elif stepNumber == 2:
-			self.armDownColumn(2, 0)
-			self.armDownColumn(3, 1)
-			self.armDownColumn(4, 2)
-			self.armDownColumn(5, 3)
-			self.armDownColumn(6, 4)
-			self.armDownColumn(7, 5)
-			self.armDownColumn(8, 6)
-			self.armDownColumn(9, 7)
+			for i in range(2, 10):
+				self.armDownColumn(i, i - 2)
 
 		# Arm Up
 		elif stepNumber == 3:
-			self.armUpColumn(3, 0)
-			self.armUpColumn(4, 1)
-			self.armUpColumn(5, 2)
-			self.armUpColumn(6, 3)
-			self.armUpColumn(7, 4)
-			self.armUpColumn(8, 5)
-			self.armUpColumn(9, 6)
+			for i in range(3, 10):
+				self.armUpColumn(i, i - 3)
 
 		# Arm Down
 		elif stepNumber == 4:
-			self.armDownColumn(4, 0)
-			self.armDownColumn(5, 1)
-			self.armDownColumn(6, 2)
-			self.armDownColumn(7, 3)
-			self.armDownColumn(8, 4)
-			self.armDownColumn(9, 5)
+			for i in range(4, 10):
+				self.armDownColumn(i, i - 4)
 
 		# Arm Up
 		elif stepNumber == 5:
-			self.armUpColumn(5, 0)
-			self.armUpColumn(6, 1)
-			self.armUpColumn(7, 2)
-			self.armUpColumn(8, 3)
-			self.armUpColumn(9, 4)
+			for i in range(5, 10):
+				self.armUpColumn(i, i - 5)
 
 		# Arm Down
 		elif stepNumber == 6:
-			self.armDownColumn(6, 0)
-			self.armDownColumn(7, 1)
-			self.armDownColumn(8, 2)
-			self.armDownColumn(9, 3)
+			for i in range(6, 10):
+				self.armDownColumn(i, i - 6)
 
 		# Arm Up
 		elif stepNumber == 7:
-			self.armUpColumn(7, 0)
-			self.armUpColumn(8, 1)
-			self.armUpColumn(9, 2)
+			for i in range(7, 10):
+				self.armUpColumn(i, i - 7)
 
 		# Arm Down
 		elif stepNumber == 8:
-			self.armDownColumn(8, 0)
-			self.armDownColumn(9, 1)
+			for i in range(8, 10):
+				self.armDownColumn(i, i - 8)
 
 		# Arm Up
 		elif stepNumber == 9:
