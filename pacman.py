@@ -266,7 +266,6 @@ class Pacman(object):
 		for i in range(0, self.args.pulse_times):
 			if self.args.verbose:
 				print('Setting brightness to: 10')
-			#~ import pdb; pdb.set_trace()
 			scrollphat.set_brightness(10)
 			self.mouthOpenDisplayLeft(position)
 			scrollphat.update()
@@ -352,45 +351,33 @@ class Pacman(object):
 
 		# Closed
 		elif stepNumber == 2:
-			self.mouthClosedColumn(4, 1)
-			self.mouthClosedColumn(3, 0)
+			for i in range(3, 5):
+				self.mouthClosedColumn(i, i - 3)
 
 		# Open
 		elif stepNumber == 3:
-			self.mouthOpenColumn(4, 2)
-			self.mouthOpenColumn(3, 1)
-			self.mouthOpenColumn(2, 0)
+			for i in range(2, 5):
+				self.mouthOpenColumn(i, i - 2)
 
 		# Closed
 		elif stepNumber == 4:
-			self.mouthClosedColumn(4, 3)
-			self.mouthClosedColumn(3, 2)
-			self.mouthClosedColumn(2, 1)
-			self.mouthClosedColumn(1, 0)
+			for i in range(1, 5):
+				self.mouthClosedColumn(i, i - 1)
 
 		# Open
 		elif stepNumber == 5:
-			self.mouthOpenColumn(4, 4)
-			self.mouthOpenColumn(3, 3)
-			self.mouthOpenColumn(2, 2)
-			self.mouthOpenColumn(1, 1)
-			self.mouthOpenColumn(0, 0)
+			for i in range(0, 5):
+				self.mouthOpenColumn(i, i)
 
 		# Closed
 		elif stepNumber == 6:
-			self.mouthClosedColumn(4, 5)
-			self.mouthClosedColumn(3, 4)
-			self.mouthClosedColumn(2, 3)
-			self.mouthClosedColumn(1, 2)
-			self.mouthClosedColumn(0, 1)
+			for i in range(0, 5):
+				self.mouthClosedColumn(i, i + 1)
 
 		# Open
 		elif stepNumber == 7:
-			self.mouthOpenColumn(4, 6)
-			self.mouthOpenColumn(3, 5)
-			self.mouthOpenColumn(2, 4)
-			self.mouthOpenColumn(1, 3)
-			self.mouthOpenColumn(0, 2)
+			for i in range(0, 5):
+				self.mouthOpenColumn(i, i + 2)
 
 		scrollphat.update()
 		time.sleep(self.args.pause_scroll)
@@ -404,45 +391,33 @@ class Pacman(object):
 
 		# Open
 		if stepNumber == 1:
-			self.mouthOpenColumn(4, 8)
-			self.mouthOpenColumn(3, 7)
-			self.mouthOpenColumn(2, 6)
-			self.mouthOpenColumn(1, 5)
-			self.mouthOpenColumn(0, 4)
+			for i in range(0, 5):
+				self.mouthOpenColumn(i, i + 4)
 
 		# Closed
 		elif stepNumber == 2:
-			self.mouthClosedColumn(4, 9)
-			self.mouthClosedColumn(3, 8)
-			self.mouthClosedColumn(2, 7)
-			self.mouthClosedColumn(1, 6)
-			self.mouthClosedColumn(0, 5)
+			for i in range(0, 5):
+				self.mouthClosedColumn(i, i + 5)
 
 		# Open
 		elif stepNumber == 3:
-			self.mouthOpenColumn(4, 10)
-			self.mouthOpenColumn(3, 9)
-			self.mouthOpenColumn(2, 8)
-			self.mouthOpenColumn(1, 7)
-			self.mouthOpenColumn(0, 6)
+			for i in range(0, 5):
+				self.mouthOpenColumn(i, i + 6)
 
 		# Closed
 		elif stepNumber == 4:
-			self.mouthClosedColumn(3, 10)
-			self.mouthClosedColumn(2, 9)
-			self.mouthClosedColumn(1, 8)
-			self.mouthClosedColumn(0, 7)
+			for i in range(0, 4):
+				self.mouthClosedColumn(i, i + 7)
 
 		# Open
 		elif stepNumber == 5:
-			self.mouthOpenColumn(2, 10)
-			self.mouthOpenColumn(1, 9)
-			self.mouthOpenColumn(0, 8)
+			for i in range(0, 3):
+				self.mouthOpenColumn(i, i + 8)
 
 		# Closed
 		elif stepNumber == 6:
-			self.mouthClosedColumn(1, 10)
-			self.mouthClosedColumn(0, 9)
+			for i in range(0, 2):
+				self.mouthClosedColumn(i, i + 9)
 
 		# Open
 		elif stepNumber == 7:
@@ -458,7 +433,7 @@ class Pacman(object):
 		if self.args.verbose:
 			print('Running DisplayVertical.scrollIn')
 
-		for i in range(0, DEFAULT_SCROLL_DISTANCE):
+		for i in range(1, DEFAULT_SCROLL_DISTANCE):
 			self.scrollLeftRightInSteps(i)
 
 	def scrollLeftRightOut(self):
@@ -485,45 +460,33 @@ class Pacman(object):
 
 		# Closed
 		elif stepNumber == 2:
-			self.mouthClosedColumn(3, 10)
-			self.mouthClosedColumn(4, 9)
+			for i in range(3, 5):
+				self.mouthClosedColumn(i, 13 - i)
 
 		# Open
 		elif stepNumber == 3:
-			self.mouthOpenColumn(2, 10)
-			self.mouthOpenColumn(3, 9)
-			self.mouthOpenColumn(4, 8)
+			for i in range(2, 5):
+				self.mouthOpenColumn(i, 12 - i)
 
 		# Closed
 		elif stepNumber == 4:
-			self.mouthClosedColumn(1, 10)
-			self.mouthClosedColumn(2, 9)
-			self.mouthClosedColumn(3, 8)
-			self.mouthClosedColumn(4, 7)
+			for i in range(1, 5):
+				self.mouthClosedColumn(i, 11 - i)
 
 		# Open
 		elif stepNumber == 5:
-			self.mouthOpenColumn(0, 10)
-			self.mouthOpenColumn(1, 9)
-			self.mouthOpenColumn(2, 8)
-			self.mouthOpenColumn(3, 7)
-			self.mouthOpenColumn(4, 6)
+			for i in range(0, 5):
+				self.mouthOpenColumn(i, 10 - i)
 
 		# Closed
 		elif stepNumber == 6:
-			self.mouthClosedColumn(0, 9)
-			self.mouthClosedColumn(1, 8)
-			self.mouthClosedColumn(2, 7)
-			self.mouthClosedColumn(3, 6)
-			self.mouthClosedColumn(4, 5)
+			for i in range(0, 5):
+				self.mouthClosedColumn(i, 9 - i)
 
 		# Open
 		elif stepNumber == 7:
-			self.mouthOpenColumn(0, 8)
-			self.mouthOpenColumn(1, 7)
-			self.mouthOpenColumn(2, 6)
-			self.mouthOpenColumn(3, 5)
-			self.mouthOpenColumn(4, 4)
+			for i in range(0, 5):
+				self.mouthOpenColumn(i, 8 - i)
 
 		scrollphat.update()
 		time.sleep(self.args.pause_scroll)
@@ -537,46 +500,33 @@ class Pacman(object):
 
 		# Open
 		if stepNumber == 1:
-
-			self.mouthOpenColumn(0, 6)
-			self.mouthOpenColumn(1, 5)
-			self.mouthOpenColumn(2, 4)
-			self.mouthOpenColumn(3, 3)
-			self.mouthOpenColumn(4, 2)
+			for i in range(0, 5):
+				self.mouthOpenColumn(i, 6 - i)
 
 		# Closed
 		elif stepNumber == 2:
-			self.mouthClosedColumn(0, 5)
-			self.mouthClosedColumn(1, 4)
-			self.mouthClosedColumn(2, 3)
-			self.mouthClosedColumn(3, 2)
-			self.mouthClosedColumn(4, 1)
+			for i in range(0, 5):
+				self.mouthClosedColumn(i, 5 - i)
 
 		# Open
 		elif stepNumber == 3:
-			self.mouthOpenColumn(0, 4)
-			self.mouthOpenColumn(1, 3)
-			self.mouthOpenColumn(2, 2)
-			self.mouthOpenColumn(3, 1)
-			self.mouthOpenColumn(4, 0)
+			for i in range(0, 5):
+				self.mouthOpenColumn(i, 4 - i)
 
 		# Closed
 		elif stepNumber == 4:
-			self.mouthClosedColumn(0, 3)
-			self.mouthClosedColumn(1, 2)
-			self.mouthClosedColumn(2, 1)
-			self.mouthClosedColumn(3, 0)
+			for i in range(0, 4):
+				self.mouthClosedColumn(i, 3 - i)
 
 		# Open
 		elif stepNumber == 5:
-			self.mouthOpenColumn(0, 2)
-			self.mouthOpenColumn(1, 1)
-			self.mouthOpenColumn(2, 0)
+			for i in range(0, 3):
+				self.mouthOpenColumn(i, 2 - i)
 
 		# Closed
 		elif stepNumber == 6:
-			self.mouthClosedColumn(0, 1)
-			self.mouthClosedColumn(1, 0)
+			for i in range(0, 2):
+				self.mouthClosedColumn(i, 1 - i)
 
 		# Open
 		elif stepNumber == 7:
@@ -701,6 +651,7 @@ def __main__(args):
 				time.sleep(args.pause_scroll)
 				scrollphat.clear()
 				pacman.pulseRight(3)
+				scrollphat.clear()
 				pacman.setPositionMiddleClosed()
 				pacman.scrollLeftRightOut()
 
