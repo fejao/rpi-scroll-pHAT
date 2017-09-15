@@ -10,7 +10,7 @@ _____________________________________________
 
 ![Imgur Image](http://i.imgur.com/x8ZZOrJ.gif)
 
-[How to use the space-invaders.py](space-invaders/README.md)
+[How to use the space-invaders.py](space-invader/README.md)
 
 ## pacman.py
 Displays a scrolling *Pacman* figure
