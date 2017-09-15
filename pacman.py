@@ -200,12 +200,11 @@ class Pacman(object):
 		if self.args.verbose:
 			print('Running Pacman.setPositionMiddleClosed')
 
-			self.mouthClosedColumn(4, 7)
-			self.mouthClosedColumn(3, 6)
-			self.mouthClosedColumn(2, 5)
-			self.mouthClosedColumn(1, 4)
-			self.mouthClosedColumn(0, 3)
-
+		self.mouthClosedColumn(4, 7)
+		self.mouthClosedColumn(3, 6)
+		self.mouthClosedColumn(2, 5)
+		self.mouthClosedColumn(1, 4)
+		self.mouthClosedColumn(0, 3)
 		scrollphat.update()
 
 	#
@@ -610,7 +609,7 @@ def __main__(args):
 			elif args.function == 'show-closed':
 				pacman.mouthClosedDisplay(args.position)
 				scrollphat.update()
-				time.sleep(3)
+				time.sleep(args.pause_show)
 				scrollphat.clear()
 
 			elif args.function == 'show-open-left':
@@ -648,10 +647,8 @@ def __main__(args):
 			elif args.function == 'scroll-left-right-pulse':
 				pacman.scrollLeftRightIn()
 				pacman.setPositionMiddleClosed()
-				time.sleep(args.pause_scroll)
 				scrollphat.clear()
 				pacman.pulseRight(3)
-				scrollphat.clear()
 				pacman.setPositionMiddleClosed()
 				pacman.scrollLeftRightOut()
 
@@ -678,7 +675,6 @@ def __main__(args):
 			elif args.function == 'scroll-right-left-pulse':
 				pacman.scrollRightLeftIn()
 				pacman.setPositionMiddleClosed()
-				time.sleep(args.pause_scroll)
 				scrollphat.clear()
 				pacman.pulseLeft(3)
 				pacman.setPositionMiddleClosed()
