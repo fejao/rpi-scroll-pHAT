@@ -32,4 +32,6 @@ _____________________________________________
 Displays a Christmas tree with many functions
 _____________________________________________
 
+![Imgur Image](http://i.imgur.com/ahaETH5.gif)
+
 [How to use the xmas-tree.py](xmas-tree/README.md)

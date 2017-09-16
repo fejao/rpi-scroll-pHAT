@@ -4,7 +4,7 @@ Display a Pacman character over your scroll-pHAT from Pimoroni
 
 Script was written to not be complicated and re-factored easily, maybe in future adding for *scroll-pHAT-HD* also
 
-# Usage
+# 1 - Usage
 The arguments that can be used with the script:
 
 ```
@@ -36,9 +36,10 @@ Optional arguments:
 * **-f FUNCTION, --function FUNCTION**
   * Set the function to run ('dance-left', 'dance-right', 'pulse-left', 'pulse-right', 'show-closed', 'show-open-left', 'show-open-right', 'scroll-left-right-in', 'scroll-left-right-out', 'scroll-left-right', 'scroll-left-right-dance', 'scroll-left-right-in-pulse', 'scroll-right-left-in', 'scroll-right-left-out', 'scroll-right-left', 'scroll-right-left-dance', 'scroll-right-left-pulse', 'clear'), default: scroll-left-right-pulse
 
-# Functions
+# 2 - Functions
 This are the already fixed functions, fell free to add or change
 
+## 2.1 - Dance
 * **dance-left**
   * Open and close the *Pacman* mouth with the *left orientation*.
   * It can be used with:
@@ -69,6 +70,7 @@ This are the already fixed functions, fell free to add or change
 
       ![Imgur Image](http://i.imgur.com/IY28On1.gif)
 
+## 2.2 - Pulse
 * **pulse-left**
   * Pulse the *Pacman figure* with the mouth rotate to the left.
   * It can be used with:
@@ -97,6 +99,7 @@ This are the already fixed functions, fell free to add or change
 
       ![Imgur Image](http://i.imgur.com/L5iniRf.gif)
 
+## 2.3 - Show
 * **show-closed**
   * Display the *Pacman figure* with the mouth closed.
   * It can be used with:
@@ -138,6 +141,8 @@ This are the already fixed functions, fell free to add or change
 
       ![Imgur Image](http://i.imgur.com/3X8jInZ.jpg)
 
+## 2.3 - Scroll
+### 2.3.1 - Scroll Left to Right
 * **scroll-left-right-in**
   * Scroll-in the *Pacman figure* from *left* to *right*.
   * It will scroll till the middle **-1** position, to display at the middle, use: **show-closed**
@@ -208,6 +213,7 @@ This are the already fixed functions, fell free to add or change
 
       ![Imgur Image](http://i.imgur.com/aouZp2E.gif)
 
+### 2.3.2 - Scroll Right to Left
 * **scroll-right-left-in**
   * Scroll-in the *Pacman figure* from *right* to *left*.
   * It will scroll till the middle **-1** position, to display at the middle, use: **show-closed**
@@ -279,7 +285,7 @@ This are the already fixed functions, fell free to add or change
 
     ![Imgur Image](http://i.imgur.com/bTZe3tQ.gif)
 
-## Other functions
+## 2.4 - Other functions
 * **clear**
   * Clears the *scroll-pHAT* display
   * Example:

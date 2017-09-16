@@ -124,6 +124,7 @@ Functions to display text at your *scroll-pHAT*
       ![Imgur Image](http://i.imgur.com/nGxIHbY.jpg)
 
 ## 3.2 - Logo
+## 3.2.1 - Logo Show
 * **logo-show**
   * Display the *Twitter Logo*.
   * It can be used with:
@@ -137,6 +138,7 @@ Functions to display text at your *scroll-pHAT*
 
       ![Imgur Image](http://i.imgur.com/n3lYp3X.jpg)
 
+## 3.2.2 - Logo Pulse
 * **logo-pulse**
   * Display the *Twitter Logo* pulsing.
   * It can be used with:
@@ -150,6 +152,7 @@ Functions to display text at your *scroll-pHAT*
 
       ![Imgur Image](http://i.imgur.com/7GT0okK.gif)
 
+## 3.2.3 - Logo Scroll
 * **logo-scroll-in**
   * Scroll-in the *Twitter Logo* from *left* to *right*.
   * It will scroll till the middle **-1** position, to display at the middle,
@@ -205,6 +208,7 @@ Functions to display text at your *scroll-pHAT*
 
       ![Imgur Image](http://i.imgur.com/7zOIVbQ.gif)
 
+## 3.2.3 - Logo Scroll Right to the Left
 * **logo-scroll-right-left-in**
   * Scroll-in the *Twitter Logo* from *right* to *left*.
   * It will scroll till the middle **-1** position, to display at the middle,
@@ -261,6 +265,7 @@ Functions to display text at your *scroll-pHAT*
       ![Imgur Image](http://i.imgur.com/7LgyLcS.gif)
 
 ## 3.3 - Logo Inverted
+## 3.3.1 - Logo Inverted Show
 * **logo-show-inverted**
   * Display the *Twitter Logo* inverted.
   * It can be used with:
@@ -274,6 +279,7 @@ Functions to display text at your *scroll-pHAT*
 
       ![Imgur Image](http://i.imgur.com/Uqry8sd.jpg)
 
+## 3.3.2 - Logo Inverted Pulse
 * **logo-pulse-inverted**
   * Display the *Twitter Logo* pulsing inverted.
   * It can be used with:
@@ -287,6 +293,7 @@ Functions to display text at your *scroll-pHAT*
 
       ![Imgur Image](http://i.imgur.com/CrZtkZk.gif)
 
+## 3.3.3 - Logo Inverted Scroll
 * **logo-scroll-in-inverted**
   * Scroll-in the *Twitter Logo* from *left* to *right* inverted.
   * It will scroll till the middle **-1** position, to display at the middle,
@@ -342,6 +349,7 @@ Functions to display text at your *scroll-pHAT*
 
       ![Imgur Image](http://i.imgur.com/507UEm7.gif)
 
+## 3.3.4 - Logo Inverted Scroll Right to Left
 * **logo-scroll-right-left-in-inverted**
   * Scroll-in the *Twitter Logo* from *right* to *left* inverted.
   * It will scroll till the middle **-1** position, to display at the middle,

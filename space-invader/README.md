@@ -4,7 +4,7 @@ Display a Space-Invader character over your scroll-pHAT from Pimoroni
 
 Script was written to not be complicated and re-factored easily, maybe in future adding for *scroll-pHAT-HD* also
 
-# Usage
+# 1 - Usage
 The arguments that can be used with the script:
 
 ```
@@ -36,9 +36,10 @@ Optional arguments:
 * **-f FUNCTION, --function FUNCTION**
   * Set the function to run ('dance', 'pulse', 'show','scroll-in', 'scroll-out', 'scroll', 'scroll-and-dance', 'scroll-and-pulse', 'clear'), default: scroll-and-pulse
 
-# Functions
+# 2 - Functions
   This are the already fixed functions, fell free to add or change
 
+## 2.1 - Dance
 * **dance**
   * Display the *Space-Invader* figure dancing. It can be used with:
       * **-b/--brightness**
@@ -52,6 +53,7 @@ Optional arguments:
 
       ![Imgur Image](http://i.imgur.com/w1VbJJ1.gif)
 
+## 2.2 - Pulse
 * **pulse**
   * Display the *Space-Invader* figure pulsing.
   * It can be used with:
@@ -65,6 +67,7 @@ Optional arguments:
 
       ![Imgur Image](http://i.imgur.com/HuSA28G.gif)
 
+## 2.3 - Show
 * **show-arms-down**
   * Display the *Space-Invader* with the arms down.
   * It can be used with:
@@ -91,6 +94,7 @@ Optional arguments:
 
         ![Imgur Image](http://i.imgur.com/U5vqD0F.gif)
 
+## 2.3 - Scroll
 * **scroll-in**
   * Scroll-in the *Space-Invader* figure.
   * It will scroll till the middle **-1** position, to display at the middle, use: **show**
@@ -161,7 +165,7 @@ Optional arguments:
 
       ![Imgur Image](http://i.imgur.com/x8ZZOrJ.gif)
 
-## Other functions
+## 2.4 - Other functions
 * **clear**
   * Clears the *scroll-pHAT* display
   * Example:
