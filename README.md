@@ -26,7 +26,7 @@ _____________________________________________
 
 ![Imgur Image](http://i.imgur.com/qj4PWU8.gif)
 
-[How to use the pacman.py](twitter/README.md)
+[How to use the twitter.py](twitter/README.md)
 
 ## xmas-tree.py
 Displays a Christmas tree with many functions
